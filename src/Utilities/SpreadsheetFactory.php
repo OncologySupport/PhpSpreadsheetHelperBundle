@@ -53,14 +53,14 @@ class SpreadsheetFactory
      * @throws \PhpOffice\PhpSpreadsheet\Exception
      * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
      */
-    public function outputToWeb(): never
+    public function outputToWeb(string $filename = 'spreadsheet.xlsx'): never
     {
         // set active sheet index to the first sheet, so Excel opens this as the first sheet
         $this->spreadsheet->setActiveSheetIndex(0);
 
         // Redirect output to a client’s web browser (Xlsx)
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="brcn.xlsx"');
+        header('Content-Disposition: attachment;filename="'.$filename.'"');
         header('Cache-Control: max-age=0');
 
         $writer = new Xlsx($this->spreadsheet);
