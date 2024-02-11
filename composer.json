@@ -1,0 +1,51 @@
+{
+    "name": "oncology-support/phpspreadsheet-helper-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Bundle ",
+    "keywords": ["symfony", "phpspreadsheet", "spreadsheet", "excel", "PHPOffice"],
+    "homepage": "https://github.com/ehymel/PhpSpreadsheetHelperBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ernest Hymel"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ehymel/PhpSpreadsheetHelperBundle/issues",
+        "source": "https://github.com/ehymel/PhpSpreadsheetHelperBundle/releases"
+    },
+    "require": {
+        "php": ">=8.2",
+        "phpoffice/phpspreadsheet": "^2.0",
+        "symfony/config": "^7.0",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/http-kernel": "^7.0",
+        "symfony/flex": "^2.4",
+        "symfony/yaml": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OncologySupport\\PhpSpreadsheetHelper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OncologySupport\\PhpSpreadsheetHelper\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+
+        }
+    }
+}
