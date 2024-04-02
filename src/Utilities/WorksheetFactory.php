@@ -116,7 +116,7 @@ class WorksheetFactory
         }
 
         // set filter on these rows
-        $this->worksheet->setAutoFilter($this->worksheet->calculateWorksheetDimension());
+        $this->worksheet->setAutoFilter([1, $this->currentRow, $this->columnCount, $this->currentRow]);
         $this->worksheet->getAutoFilter()->setRangeToMaxRow();
 
         // Freeze pane just below header row
