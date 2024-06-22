@@ -31,6 +31,11 @@ class SpreadsheetFactory
         return $this->spreadsheet->getActiveSheet();
     }
 
+    public function createSheet(): Worksheet
+    {
+        return $this->spreadsheet->createSheet();
+    }
+
     public function setActiveSheetIndex(int $sheetIndex = 0): void
     {
         $this->spreadsheet->setActiveSheetIndex($sheetIndex);
