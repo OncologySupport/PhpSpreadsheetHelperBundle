@@ -6,6 +6,11 @@ in your Symfony application by adding helper methods
 
 ## Documentation
 
+## What's new in version 2
+
+WorksheetFactory has been re-factored to WorksheetUtils to allow the helper methods to be available on 
+worksheets beyond the first tab of the spreadsheet. See the example below.
+
 ## License
 
 PhpSpreadsheet Helper Bundle is released under the MIT License. See the bundled [LICENSE](LICENSE) file for details.
@@ -55,12 +60,12 @@ This bundle provides helper functions that you call from your controller.
 // your controller
 
 use OncologySupport\PhpSpreadsheetHelper\Utilities\SpreadsheetFactory;
-use OncologySupport\PhpSpreadsheetHelper\Utilities\WorksheetFactory;
+use OncologySupport\PhpSpreadsheetHelper\Utilities\WorksheetUtils;
 
 public function createAndDownloadSpreadsheet()
 {
     $spreadsheet = new SpreadsheetFactory();
-    $worksheet = new WorksheetFactory($spreadsheet, 'My worksheet');
+    $worksheet = new WorksheetUtils($spreadsheet->getActiveSheet(), 'First Tab');
     
     $worksheet->addTitleRow('Very Important Data');
     
@@ -72,7 +77,21 @@ public function createAndDownloadSpreadsheet()
     ];
     
     $worksheet->addDataRows[$rows];
+    
+    // add another tab on the spreadsheet
+    $worksheet2 = new WorksheetUtils($spreadsheet->createSheet(), 'Second Tab');
+    $spreadsheet->setActiveSheetIndex(1);
 
+    $worksheet2->addTitleRow('Even More Important Data');
+    
+    $header = ['Order Date', 'Site', 'Item', 'Item Description'];
+    $rows = [
+        ['2/12/2024', 'Main site', 'Donkey collar', 'Big enough for the most stubborn donk'],
+        ['4/3/2024', 'Backup site', 'Duck harness', 'Take your duck for a walk!'],
+    ];
+    
+    $worksheet2->addDataRows[$rows];
+    
     // download to an excel file    
     $spreadsheet->outputToWeb();
 }
