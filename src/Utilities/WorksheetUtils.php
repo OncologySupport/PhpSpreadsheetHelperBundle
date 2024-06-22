@@ -12,23 +12,19 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class WorksheetFactory
+class WorksheetUtils
 {
-    private readonly Spreadsheet $spreadsheet;
     private readonly ?Worksheet $worksheet;
 
     private int $currentRow = 1;
     private int $columnCount;
 
     /**
-     * WorksheetFactory constructor.
-     *
      * @throws \PhpOffice\PhpSpreadsheet\Exception
      */
-    public function __construct(SpreadsheetFactory $factory, string $worksheetTitle = '')
+    public function __construct(Worksheet $worksheet, string $worksheetTitle = '')
     {
-        $this->spreadsheet = $factory->getSpreadsheet();
-        $this->worksheet = $this->spreadsheet->getActiveSheet();
+        $this->worksheet = $worksheet;
         $this->worksheet->setTitle($worksheetTitle);
     }
 
@@ -90,8 +86,6 @@ class WorksheetFactory
      * Add headers to columns for orders in this worksheet.
      *
      * @param array $headers Array of headers to add to worksheet
-     *
-     * @return void
      *
      * @throws \PhpOffice\PhpSpreadsheet\Exception
      */

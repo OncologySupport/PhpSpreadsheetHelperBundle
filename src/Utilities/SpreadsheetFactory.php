@@ -15,19 +15,11 @@ class SpreadsheetFactory
 {
     private Spreadsheet $spreadsheet;
 
-    /**
-     * Spreadsheet constructor.
-     *
-     * @throws \PhpOffice\PhpSpreadsheet\Exception
-     */
     public function __construct()
     {
         $this->createSpreadsheet();
     }
 
-    /**
-     * @return Spreadsheet
-     */
     public function getSpreadsheet(): Spreadsheet
     {
         return $this->spreadsheet;
