@@ -18,6 +18,7 @@ class SpreadsheetFactory
     public function __construct()
     {
         $this->createSpreadsheet();
+        return $this->spreadsheet;
     }
 
     public function getSpreadsheet(): Spreadsheet
