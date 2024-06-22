@@ -9,6 +9,7 @@
 namespace OncologySupport\PhpSpreadsheetHelper\Utilities;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class SpreadsheetFactory
@@ -18,12 +19,21 @@ class SpreadsheetFactory
     public function __construct()
     {
         $this->createSpreadsheet();
-        return $this->spreadsheet;
     }
 
     public function getSpreadsheet(): Spreadsheet
     {
         return $this->spreadsheet;
+    }
+
+    public function getActiveSheet(): Worksheet
+    {
+        return $this->spreadsheet->getActiveSheet();
+    }
+
+    public function setActiveSheetIndex(int $sheetIndex = 0): void
+    {
+        $this->spreadsheet->setActiveSheetIndex($sheetIndex);
     }
 
     /**
