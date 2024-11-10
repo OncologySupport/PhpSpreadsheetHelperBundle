@@ -1,7 +1,7 @@
 # PhpSpreadsheet Helper Bundle
 
 `PhpSpreadsheet Helper Bundle` eases the use of the excellent
-[PHPOffice/PhpSpreadsheet bundle](https://https://github.com/PHPOffice/PhpSpreadsheet)
+[PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 in your Symfony application by adding helper methods
 
 ## Documentation
