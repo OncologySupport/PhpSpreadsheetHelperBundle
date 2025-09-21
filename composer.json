@@ -15,13 +15,13 @@
         "source": "https://github.com/ehymel/PhpSpreadsheetHelperBundle/releases"
     },
     "require": {
-        "php": ">=8.2",
-        "phpoffice/phpspreadsheet": "^3.3 || ^4.0",
-        "symfony/config": "^6.0 || ^7.0",
-        "symfony/dependency-injection": "^6.0 || ^7.0",
-        "symfony/http-kernel": "^6.0 || ^7.0",
-        "symfony/flex": "^2.4",
-        "symfony/yaml": "^6.0 || ^7.0"
+        "php": ">=8.3",
+        "phpoffice/phpspreadsheet": "^4.4 || ^5.1",
+        "symfony/config": "^7.3",
+        "symfony/dependency-injection": "^7.3",
+        "symfony/http-kernel": "^7.3",
+        "symfony/flex": "^2.8",
+        "symfony/yaml": "^7.3"
     },
     "autoload": {
         "psr-4": {
@@ -35,7 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.0-dev"
+            "dev-master": "2.2.0-dev"
         }
     },
     "config": {
