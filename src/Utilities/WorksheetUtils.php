@@ -119,7 +119,7 @@ class WorksheetUtils
 
     private function autosizeAllColumns(): void
     {
-        for ($column = 0; $column <= $this->columnCount; ++$column) {
+        for ($column = 1; $column <= $this->columnCount; ++$column) {
             $this->worksheet->getColumnDimensionByColumn($column)->setAutoSize(true);
         }
     }
