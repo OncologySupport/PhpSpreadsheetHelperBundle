@@ -7,15 +7,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Ernest Hymel"
+            "name": "Oncology Support"
         }
     ],
     "support": {
-        "issues": "https://github.com/ehymel/PhpSpreadsheetHelperBundle/issues",
-        "source": "https://github.com/ehymel/PhpSpreadsheetHelperBundle/releases"
+        "issues": "https://github.com/OncologySupport/PhpSpreadsheetHelperBundle/issues",
+        "source": "https://github.com/OncologySupport/PhpSpreadsheetHelperBundle/releases"
     },
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "phpoffice/phpspreadsheet": "^4.4 || ^5.1",
         "symfony/config": "^7.4||^8.0",
         "symfony/dependency-injection": "^7.4||^8.0",
@@ -35,17 +35,12 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.2.0-dev"
+            "dev-master": "2.3.0-dev"
         }
     },
     "config": {
         "allow-plugins": {
             "symfony/flex": true
-        }
-    },
-    "scripts": {
-        "auto-scripts": {
-
         }
     }
 }
